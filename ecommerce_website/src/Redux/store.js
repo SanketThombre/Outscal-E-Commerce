@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 
-import { loginreducer } from "./Login/reducer";
 
+import {productReducer} from "./Products/reducer";
 import thunk from "redux-thunk";
 
 const composeEnhancers =
@@ -19,8 +19,7 @@ const enhancer = composeEnhancers(
 );
 
 const rootreducer = combineReducers({
-  login: loginreducer,
-  
+  products: productReducer,
 })
 
 export const store = createStore(rootreducer, enhancer);
